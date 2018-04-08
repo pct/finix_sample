@@ -1,18 +1,13 @@
 defmodule Deep do
-  @moduledoc """
-  Documentation for Deep.
-  """
+  # https://hexdocs.pm/elixir/Application.html
+  use Application
 
-  @doc """
-  Hello world.
+  def start(_type, _args) do
+    children = [
+      Plug.Adapters.Cowboy.child_spec(scheme: :http, plug: Web.Router, options: [port: 4000])
+    ]
 
-  ## Examples
-
-      iex> Deep.hello
-      :world
-
-  """
-  def hello do
-    :world
+    opts = [strategy: :one_for_one, name: Deep.Supervisor]
+    Supervisor.start_link(children, opts)
   end
 end
