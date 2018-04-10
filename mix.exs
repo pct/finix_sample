@@ -22,7 +22,8 @@ defmodule FinixSample.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:finix, github: "pct/finix"}
+      {:finix, github: "pct/finix"},
+      {:exsync, "~> 0.2", only: :dev} # reload
     ]
   end
 end

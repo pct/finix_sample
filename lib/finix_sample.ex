@@ -3,6 +3,15 @@ defmodule FinixSample do
   use Application
 
   def start(_type, _args) do
+
+    # exsync reload
+    case Code.ensure_loaded(ExSync) do
+      {:module, ExSync = mod} ->
+        mod.start()
+      {:error, :nofile} ->
+        :ok
+    end
+
     children = [
       Plug.Adapters.Cowboy.child_spec(scheme: :http, plug: Web.Router, options: [port: 4000])
     ]
