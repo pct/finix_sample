@@ -10,11 +10,11 @@ use Mix.Config
 
 # You can configure your application as:
 #
-#     config :deep, key: :value
+#     config :finix_sample, key: :value
 #
 # and access this configuration in your application as:
 #
-#     Application.get_env(:deep, :key)
+#     Application.get_env(:finix_sample, :key)
 #
 # You can also configure a 3rd-party app:
 #
