@@ -2,8 +2,8 @@ defmodule Web.Controllers.Page do
   use Finix.Controller
   
   def index(conn, _args) do
-    conn
-    |> render("page/index.eex", [msg: "hello, world"])
+    #conn |> render("index", [msg: "hello, world"])
+    conn |> render([msg: "hello, world"])
   end
 
   def hello(conn, args) do
