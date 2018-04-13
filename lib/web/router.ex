@@ -1,7 +1,7 @@
-defmodule Web.Router do
+defmodule Router do
   use HttpRouter
 
-  alias Web.Controllers, as: C
+  alias Controllers, as: C
 
   get "/", C.Page, :index
   get "/hello/:message", C.Page, :hello

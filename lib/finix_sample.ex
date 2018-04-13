@@ -13,7 +13,7 @@ defmodule FinixSample do
     end
 
     children = [
-      Plug.Adapters.Cowboy.child_spec(scheme: :http, plug: Web.Router, options: [port: 4000])
+      Plug.Adapters.Cowboy.child_spec(scheme: :http, plug: Router, options: [port: 4000])
     ]
 
     opts = [strategy: :one_for_one, name: FinixSample.Supervisor]

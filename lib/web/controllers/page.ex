@@ -1,4 +1,4 @@
-defmodule Web.Controllers.Page do
+defmodule Controllers.Page do
   use Finix.Controller
   
   def index(conn, _args) do
